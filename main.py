@@ -23,4 +23,14 @@ print("USD: ",respuesta["rates"]["BTC"])
 """
 
 #Método en un solo print usando fstring y saltos de linea
-print(f"Rates: {respuesta["rates"]},\nUSD: {respuesta["rates"]["USD"]},\nMXN: {respuesta["rates"]["MXN"]},\nBTC: {respuesta["rates"]["BTC"]}")
+
+# print(f"Rates: {respuesta["rates"]},\nUSD: {respuesta["rates"]["USD"]},\nMXN: {respuesta["rates"]["MXN"]},\nBTC: {respuesta["rates"]["BTC"]}")
+
+
+#Ejercicio 2 capturar errores de peticion http:
+valor_error = {"error":{"code":"invalid_base_currency","message":"An unexpected error ocurred. [Technical Support: support@apilayer.com]"}}
+if response.status_code == 200:
+    print(f"Rates: {respuesta["rates"]},\nUSD: {respuesta["rates"]["USD"]},\nMXN: {respuesta["rates"]["MXN"]},\nBTC: {respuesta["rates"]["BTC"]}")
+
+elif response.status_code >= 400:
+    print(f"error: codigo:{ valor_error['error']['code']}, mensaje: { respuesta ['error']['message']}")
