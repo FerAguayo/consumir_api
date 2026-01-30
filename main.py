@@ -2,7 +2,14 @@ import requests as consulta
 
 #http://api.exchangeratesapi.io/v1/latest?access_key=4cff8ff3c7effbd2e294723f959fb196&base=EUR&symbols=USD,MXN,BTC
 
-response = consulta.get("http://api.exchangeratesapi.io/v1/latest?access_key=4cff8ff3c7effbd2e294723f959fb196&base=EUR&symbols=USD,MXN,BTC")
+API_KEY = "4cff8ff3c7effbd2e294723f959fb196"
+#moneda: "EUR"
+moneda = input("Ingrese un código de moneda ").upper()
+
+while moneda == "" or not moneda.isalpha():
+    mondena = input("Ingrese un código de moneda ").upper()
+
+response = consulta.get(f"http://api.exchangeratesapi.io/v1/latest?access_key={API_KEY}&base={moneda}&symbols=USD,MXN,BTC")
 
 """ <<<< CÓDIGOS DE REQUEST >>>>>
 print("Código http de respuesta: ", response.status_code)
