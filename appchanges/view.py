@@ -10,10 +10,12 @@ class ViewCoins():
         print(f"Total de código de monedas: ", len(obj_modelo.valores_lista))
 
     def viewRatesCoin(self,obj_modelo):
-        print("Rates: ",modelo.respuesta["rates"])
-        print("USD: ",round(modelo.respuesta["rates"]["USD"],2))
-        print("USD: ",round(modelo.respuesta["rates"]["BTC"],2))
-        print("USD: ",round(modelo.respuesta["rates"]["MXN"],2))
+        print("Rates: ",obj_modelo.respuesta["rates"])
+        print("USD: ",round(obj_modelo.respuesta["rates"]["USD"],2))
+        print("USD: ",round(obj_modelo.respuesta["rates"]["BTC"],2))
+        print("USD: ",round(obj_modelo.respuesta["rates"]["MXN"],2))
+        print("Moneda base: ", obj_modelo.respuesta["base"])
+        print("Fecha de consulta: ", obj_modelo.respuesta["date"])
     
     def getError(self,error):
         print(error)
