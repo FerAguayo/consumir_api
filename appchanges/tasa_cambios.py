@@ -1,7 +1,6 @@
 import requests as consulta
+from config import API_KEY
 
-#http://api.exchangeratesapi.io/v1/latest?access_key=4cff8ff3c7effbd2e294723f959fb196&base=EUR&symbols=USD,MXN,BTC
-API_KEY = "4cff8ff3c7effbd2e294723f959fb196"
 moneda = input("Ingrese un código de moneda ").upper()
 
 #El while controla que no se ingrese un valor erroneo o vacío

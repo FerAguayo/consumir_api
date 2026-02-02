@@ -1,11 +1,28 @@
 import requests as consulta
+from config import API_KEY
+#https://api.exchangeratesapi.io/v1/latest?access_key=4cff8ff3c7effbd2e294723f959fb196
+url = f"https://api.exchangeratesapi.io/v1/latest?access_key={API_KEY}"
 
-#http://api.exchangeratesapi.io/v1/latest?access_key=4cff8ff3c7effbd2e294723f959fb196&base=EUR&symbols=USD,MXN,BTC
-API_KEY = "4cff8ff3c7effbd2e294723f959fb196"
+response = consulta.get(url)
+
+if response.status_code != 200:
+    raise Exception("Error en consulta http")
+
+objeto_general = response.json()
+
+valores_lista=[]
+
+for k,v in objeto_general["rates"].items():
+    valores_lista.append(k)
+
+print(f"Lista completa", valores_lista)
+print(f"Total de código de monedas: ", len(valores_lista))
+
+
 moneda = input("Ingrese un código de moneda ").upper()
 
 #El while controla que no se ingrese un valor erroneo o vacío
-while moneda == "" or not moneda.isalpha():
+while moneda == "" or not moneda.isalpha() or moneda not in valores_lista:
     mondena = input("Ingrese un código de moneda ").upper()
 
 response = consulta.get(f"http://api.exchangeratesapi.io/v1/latest?access_key={API_KEY}&base={moneda}&symbols=USD,MXN,BTC")

@@ -5,3 +5,7 @@ rates = prueba["rates"]
 print(f"USD - {rates["USD"]}")
 print(f"MXN - {rates["MXN"]}")
 print(f"BTC - {rates["BTC"]}")
+
+USD: 1.18755
+MXN: 20.664212
+BTC: 1.4308459e-05
