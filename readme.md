@@ -25,4 +25,6 @@ windows - .\entorno\Scripts\activate
 mac o linux - source entorno/bin/activate
 
 pip install -r requirements.txt
+
+-Utilizamos las librerias de pytest y requests
 ```
