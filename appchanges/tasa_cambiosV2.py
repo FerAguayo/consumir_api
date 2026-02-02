@@ -23,7 +23,7 @@ moneda = input("Ingrese un código de moneda ").upper()
 
 #El while controla que no se ingrese un valor erroneo o vacío
 while moneda == "" or not moneda.isalpha() or moneda not in valores_lista:
-    mondena = input("Ingrese un código de moneda ").upper()
+    moneda = input("Ingrese un código de moneda ").upper()
 
 response = consulta.get(f"http://api.exchangeratesapi.io/v1/latest?access_key={API_KEY}&base={moneda}&symbols=USD,MXN,BTC")
 respuesta = response.json() #Obtener la respuesta en formato de diccionario
