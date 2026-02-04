@@ -1,30 +1,43 @@
-## Aplicación de consulta de api de valores de monedas internacionales
+# Currency Exchange Rate API Client
 
-Programa hecho en python para recuperar el valor en monedas de euros(EUR) y dólares(USD)
+Python application to fetch currency exchange rates (EUR/USD) from ExchangeRatesAPI.
 
-# Instalación
--Obtener el apikey en https://api.exchangeratesapi.io
--Renombrar config_template.py a config.py
--Agregar la apikey dentro de config.py de la siguiente manera
-```
-API_KEY="Ingresa tu apikey"
-```
-# Instalacion de dependencias(librerias)
--Crear un entorno virtual de python con una de estas opciones
+## Features
+- MVC architecture
+- Unit tests with pytest
+- Environment configuration with API key
 
-```
-py -m venv entorno
-python -m venv entorno
-python3 -m venv entorno
+## Installation
+
+1. Get your API key at https://api.exchangeratesapi.io
+2. Rename `config_template.py` to `config.py`
+3. Add your API key:
+```python
+API_KEY="your_api_key_here"
 ```
 
--Activar el entorno e instalar los requerimientos
+## Setup
 
+Create virtual environment:
+```bash
+python -m venv venv
 ```
-windows - .\entorno\Scripts\activate
-mac o linux - source entorno/bin/activate
 
+Activate it:
+```bash
+# Windows
+.\venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
+```
+
+Install dependencies:
+```bash
 pip install -r requirements.txt
+```
 
--Utilizamos las librerias de pytest y requests
+## Run Tests
+```bash
+pytest
 ```
